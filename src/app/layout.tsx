@@ -5,7 +5,6 @@ import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
 
 import { ThemeProvider } from '@/components/ThemeProvider'
-import TopBar from '@/components/TopBar'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -23,7 +22,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                     enableSystem
                     disableTransitionOnChange
                 >
-                    <TopBar />
                     {children}
                 </ThemeProvider>
             </body>
