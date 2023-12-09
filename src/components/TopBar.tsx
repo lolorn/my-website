@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button'
 
 const TopBar = () => {
     return (
-        <header className="flex p-2 sm:p-2 md:p-3 lg:p-4 justify-between items-center gap-4 hover:shadow-md transition-shadow duration-700">
+        <header className="flex p-2 sm:p-2 md:p-3 lg:p-4 justify-between items-center gap-4 hover:shadow-md transition-shadow duration-700 bg-transparent backdrop-blur-sm backdrop-brightness-90">
             <Link href={'intro'}>介绍</Link>
             <div className="flex items-center gap-2">
                 <ThemeToggle />

@@ -1,8 +1,10 @@
 'use client'
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
-import { ChevronDownCircle, ChevronUpCircle } from 'lucide-react'
+import { ChevronDownCircle, ChevronUpCircle, Home } from 'lucide-react'
+import Link from 'next/link'
 import { useRef, useState } from 'react'
 
+import Tooltips from '@/components/Tooltips'
 import { Button } from '@/components/ui/button'
 
 export default function IntroPage() {
@@ -32,8 +34,9 @@ export default function IntroPage() {
                     <p>Page5</p>
                 </ParallaxLayer>
             </Parallax>
-            <div className="h-24 fixed bottom-0 top-[calc(50vh_-_48px)] right-4 flex flex-col justify-between items-center">
+            <div className="h-36 p-2 fixed bottom-0 top-[calc(50vh_-_72px)] right-4 flex flex-col justify-between items-center bg-black/10 backdrop-blur-md rounded-lg shadow-md">
                 <Button
+                    className="bg-transparent hover:bg-black/10 hover:scale-110 transition-all"
                     variant={'default'}
                     size={'icon'}
                     onClick={() => {
@@ -46,9 +49,23 @@ export default function IntroPage() {
                         }
                     }}
                 >
-                    <ChevronUpCircle />
+                    <Tooltips text="上一页">
+                        <ChevronUpCircle />
+                    </Tooltips>
                 </Button>
                 <Button
+                    className="bg-transparent hover:outline"
+                    variant={'default'}
+                    size={'icon'}
+                >
+                    <Link href={'/home'}>
+                        <Tooltips text="返回主页">
+                            <Home />
+                        </Tooltips>
+                    </Link>
+                </Button>
+                <Button
+                    className="bg-transparent hover:bg-black/10 hover:scale-110 transition-all"
                     variant={'default'}
                     size={'icon'}
                     onClick={() => {
@@ -61,7 +78,9 @@ export default function IntroPage() {
                         }
                     }}
                 >
-                    <ChevronDownCircle />
+                    <Tooltips text="下一页">
+                        <ChevronDownCircle />
+                    </Tooltips>
                 </Button>
             </div>
         </div>
